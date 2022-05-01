@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.html">
+    <link rel="stylesheet" href="signup.html">
+    <style>
+#container{
+    display: block;
+    width:200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin :auto;
+    margin-top: 100px;
+color:blue;
+padding:10px;
+    
+}
+
+input{
+    margin:10px;
+    
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+    <form action=""id="form2">
+        <h1>Login</h1>
+        <input id="email1"type="text" placeholder="Enter your email">
+        <input  id="password1"type="text" placeholder="Enter your password">
+        <input type="submit" value="login">
+        
+    </form>
+</div>
+</body>
+</html>
+
+<script>
+    var loginarr=JSON.parse(localStorage.getItem("sampledetails"))
+ document.querySelector("#form2").addEventListener("submit",logindetails)
+
+ 
+//     var loginarr=JSON.parse(localStorage.getItem("sampledetails2"))||[];
+//     document.querySelector("#form2").addEventListener("submit",logindetails)
+//     function logindetails(){
+//         console.log("k")
+//         event.preventDefault();
+//     var loginobj={
+//         "personemail":document.querySelector("#email").value ,
+        
+//         "password":form2.password.value,
+    
+//     };
+//     loginarr.push(loginobj);
+// console.log(loginarr);
+//     localStorage.setItem("sampledetails2",JSON.stringify(loginarr));
+//     if(sampledetails==sampledetails2) 
+//    {
+//        alert("login successful")
+//    }
+//    else{
+//        alert("login fail")
+//    }
+//     }
+  function logindetails(){
+      event.preventDefault();
+      console.log(loginarr)
+      var person1email=document.querySelector("#email1").value;
+      var person2paswrd=document.querySelector("#password1").value;
+     // console.log(loginarr[i].personemail)
+      for(var i=0;i<loginarr.length;i++)
+      {
+          if(loginarr[i].personemail==person1email&&loginarr[i].password==person2paswrd)
+          {
+              alert("login Successfull")
+              //localstorage.set
+
+          }
+else{
+    alert("login unsuccessfull")
+}
+
+      }
+
+  }
+
+
+
+
+
+
+
+</script>
+

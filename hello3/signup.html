@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.html">
+    <style>
+#formcontainer{
+    width:200px;
+    margin: auto;
+    margin-top:50px;
+    justify-items: auto;
+    padding:20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+input{
+    margin:10px;
+    
+}
+
+    </style>
+
+</head>
+<body>
+    <div id="formcontainer">
+    <form action="" id="form">
+        <h1>Fill your Details</h1>
+        <input id="email" type="text" name="Enter your email" placeholder="email" >
+        <input id="phone"type="text" name=" phone no."placeholder="phone no.">
+        <input id="password"type="text"name="password" placeholder="password">
+        <input type="submit" value="Sign up">
+    
+    </form>
+    </div>
+</body>
+</html>
+<script>
+var signuparr=JSON.parse(localStorage.getItem("sampledetails"))||[];
+document.querySelector("form").addEventListener("submit",signupdetails)
+function signupdetails(){
+    event.preventDefault();
+var signupobj={
+    "personemail":document.querySelector("#email").value ,
+    "personphone":form.phone.value,
+    "password":form.password.value,
+
+};
+signuparr.push(signupobj)
+console.log(signuparr)
+localStorage.setItem("sampledetails",JSON.stringify(signuparr))
+window.location.href="login.html"
+}
+
+
+</script>
+
