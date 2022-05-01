@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>men</title>
+    <link rel="stylesheet" href="cart.html"/>
+</head>
+<body>
+    <form id="form">
+<input id="img"type="text" placeholder="imgurl"/>
+
+<input id="shoename" type="text" placeholder="shoesname"/>
+<input id="money" type="text" placeholder="price"/>
+
+<input id="submit" type="submit" value="Submit"/>
+
+
+
+
+    </form>
+
+</body>
+</html>
+<script>
+  var shoesArr=[];
+
+document.querySelector("#form").addEventListener("submit",shoes);
+
+function shoes(){
+    event.preventDefault();
+    
+   var shoesobj={
+   shoeimage: document.querySelector("#img").value,
+    shoesname: document.querySelector("#shoename").value,
+    shoescost: document.querySelector("#money").value,
+
+    }
+shoesArr.push(shoesobj);
+localStorage.setItem("shoeinfo",JSON.stringify(shoesArr));
+}
+
+
+
+
+</script>
